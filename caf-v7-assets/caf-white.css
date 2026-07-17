@@ -1,0 +1,202 @@
+/* =====================================================================
+   Champion Auto Finance — v6 "white" override (light theme)
+   Flips the navy-glass dark theme to a clean white one by redefining the
+   palette tokens, removes the background image, and keeps text readable
+   (dark ink body, blue links, red/blue accents). Loaded LAST.
+   ===================================================================== */
+
+:root {
+  /* grounds: navy scale -> white / light greys */
+  --navy-950: #ffffff;
+  --navy-900: #ffffff;
+  --navy-800: #eef3fa;
+  --navy-700: #e2eaf5;
+
+  /* text: light ink -> dark ink */
+  --ink:      #0f1728;
+  --ink-dim:  #38455f;
+  --ink-faint:#5c6a84;
+
+  /* surfaces / borders */
+  --glass:    #ffffff;
+  --glass-2:  #f3f7fc;
+  --line:     rgba(16,42,79,0.16);
+  --panel:    #ffffff;
+
+  /* softer shadows/glows for a light ground */
+  --shadow:   0 20px 50px -30px rgba(16,42,79,0.28);
+  --glow:     0 0 0 1px rgba(43,137,255,0.28), 0 14px 34px -14px rgba(43,137,255,0.30);
+
+  /* accents kept: --blue #2b89ff, --red #e3142d, --chrome #cfe0f5 remain */
+}
+
+/* Remove the background image; white ground */
+html, body {
+  background: #ffffff !important;
+  background-image: none !important;
+  color: var(--ink) !important;
+}
+
+/* Hide the dark intro/loader overlay entirely */
+.intro { display: none !important; }
+
+/* Default readable text everywhere */
+body, p, li, span, small, strong, em, td, th, dd, dt, figcaption, label, blockquote,
+h1, h2, h3, h4, h5, h6 {
+  color: var(--ink);
+}
+.muted, .subtle, [class*="dim"], [class*="faint"], .eyebrow, .kicker { color: var(--ink-dim) !important; }
+
+/* Links = readable brand blue (blue-soft is too light on white) */
+a { color: #0b4f93; }
+a:hover { color: #072f5c; }
+
+/* Any element that pulled a dark navy background directly -> light */
+[style*="background:#0"], [style*="background: #0"],
+[style*="background-color:#0"], [style*="background-color: #0"],
+[style*="background:#1"], [style*="background: #1"] {
+  background: #ffffff !important;
+  color: var(--ink) !important;
+}
+
+/* Hardcoded dark gradient panels seen in home2.css / pages.css -> light card */
+.stat, .card, .panel, .glass, [class*="card"], [class*="panel"], [class*="tile"],
+[class*="feature"], [class*="step"], [class*="duo__card"] {
+  color: var(--ink);
+}
+
+/* Make ANY white text black — including labels on filled buttons/badges */
+.btn, .button, [class*="btn"], .badge, .pill, .cta,
+.btn *, [class*="btn"] * {
+  color: #000000 !important;
+}
+/* outline/ghost buttons on white keep blue text */
+.btn--ghost, .btn--outline, [class*="ghost"], [class*="outline"],
+.btn--ghost *, [class*="ghost"] * {
+  color: #0b4f93 !important;
+  background: transparent !important;
+}
+
+/* Header / nav text -> blue */
+.nav .nav__links a, .nav__links a,
+.nav__phone, .nav__email,
+.nav__contact, .nav__contact * {
+  color: #0b4f93 !important;
+}
+.nav .nav__links a:hover { color: #072f5c !important; }
+
+/* Catch any remaining white text site-wide -> black
+   (buttons handled above; this fixes stray white copy) */
+[style*="color:#fff"], [style*="color: #fff"],
+[style*="color:#ffffff"], [style*="color: #ffffff"],
+[style*="color:white"], [style*="color: white"] {
+  color: #000000 !important;
+}
+
+/* =====================================================================
+   Header: shorter bar + gets more opaque on scroll
+   (scroll JS already toggles .nav.is-stuck at >20px)
+   ===================================================================== */
+
+/* Shorter header — the 150px logo was making it very tall */
+.nav__logo { height: 46px !important; }
+.nav { padding: 0.3rem 0 !important; }
+
+/* At the top: translucent white so the page shows through faintly */
+.nav {
+  background: rgba(255, 255, 255, 0.55) !important;
+  backdrop-filter: blur(8px) saturate(120%) !important;
+  -webkit-backdrop-filter: blur(8px) saturate(120%) !important;
+  border-bottom: 1px solid transparent !important;
+}
+
+/* Scrolled: more opaque, tighter, with a soft shadow */
+.nav.is-stuck {
+  background: rgba(255, 255, 255, 0.97) !important;
+  backdrop-filter: blur(16px) saturate(140%) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(140%) !important;
+  border-bottom: 1px solid var(--line) !important;
+  box-shadow: 0 6px 22px rgba(16, 42, 79, 0.08) !important;
+  padding: 0.15rem 0 !important;
+}
+.nav.is-stuck .nav__logo { height: 40px !important; }
+
+/* Header reverted to the plain white bar; only the larger logo is kept */
+.nav__logo { height: 160px !important; }
+.nav.is-stuck .nav__logo { height: 140px !important; }
+
+/* FAQ as one continuous list (no separate boxes) */
+.faq-list { max-width: 820px; margin: 0 auto; }
+.faq-item { padding: 1.5rem 0; border-bottom: 1px solid rgba(16,42,79,0.14); }
+.faq-item:first-child { border-top: 1px solid rgba(16,42,79,0.14); }
+.faq-item h3 { color: #0f1728 !important; font-size: 1.18rem; margin: 0 0 0.5rem; }
+.faq-item p { color: #38455f !important; margin: 0; line-height: 1.6; }
+
+/* Gradient-clipped headline text (was clipped to a light gradient -> invisible on white) */
+[style*="background-clip"], .grad-text, [class*="grad"] {
+  -webkit-text-fill-color: initial !important;
+  color: var(--ink) !important;
+  background: none !important;
+}
+
+/* Accent headlines that used a light blue->white->red clip -> solid readable blue */
+.hero__title-accent,
+.subhero__title .accent,
+.hero-content h2 {
+  -webkit-text-fill-color: #1466c9 !important;
+  color: #1466c9 !important;
+  background: none !important;
+}
+
+/* Stat / step numbers that were clipped to a light gradient -> solid blue */
+.stat__num, .statband__num, .step__num {
+  -webkit-text-fill-color: #1466c9 !important;
+  color: #1466c9 !important;
+  background: none !important;
+}
+
+/* Alternating "band" sections -> light tint (were dark translucent navy) */
+.section--band { background: #eef3fa !important; }
+
+/* Form inputs were dark navy -> white so typed text is readable */
+input, textarea, select,
+.cta__form input, .form-card input, .form-card textarea, .form-card select {
+  background: #ffffff !important;
+  color: var(--ink) !important;
+  border: 1px solid var(--line) !important;
+}
+input::placeholder, textarea::placeholder { color: var(--ink-faint) !important; }
+
+/* Footer -> white with dark text (was dark translucent navy) */
+.footer, .site-footer, footer {
+  background: #ffffff !important;
+  border-top: 1px solid var(--line) !important;
+}
+.footer *, .site-footer * { color: var(--ink-dim) !important; }
+.footer a:hover, .site-footer a:hover { color: #0b4f93 !important; }
+.footer__logo, .site-footer img { filter: none !important; }
+
+/* ---- Mobile: slim header + content-first hero (phones) ---- */
+@media (max-width: 720px) {
+  /* header: the 160px logo made it eat ~1/4 of the screen */
+  .nav__logo,
+  .nav.is-stuck .nav__logo { height: 44px !important; }
+  .nav { padding: 6px 0 !important; }
+
+  /* hero: drop the decorative emblem, kill the 100vh gap, size the headline to fit */
+  .hero__visual { display: none !important; }
+  .hero {
+    grid-template-columns: 1fr !important;
+    min-height: 0 !important;
+    align-items: start !important;
+    text-align: left !important;
+    padding: 88px 1.25rem 44px !important;
+  }
+  .hero h1 { font-size: 2.15rem !important; line-height: 1.1 !important; }
+  .hero__content { order: 1 !important; }
+}
+
+/* ---- Lease Buyouts additions: navy kicker, red button keeps white text ---- */
+.kicker { color: #123a6d !important; }
+.btn--red { background: var(--red) !important; }
+.btn--red, .btn--red * { color: #ffffff !important; }

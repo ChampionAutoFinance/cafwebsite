@@ -1,0 +1,21 @@
+# Never commit WordPress secrets or DB material
+wp-config.php
+wp-config-*.php
+*.sql
+*.sql.gz
+*.sql.zip
+
+# Private / server-only
+form-submissions/
+error_log
+*.log
+cgi-bin/
+
+# Local backups / snapshots
+*.live-before-*
+*.bak
+*~
+
+# OS junk
+.DS_Store
+Thumbs.db
