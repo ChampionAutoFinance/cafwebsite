@@ -40,9 +40,11 @@
   /* ---- Mobile menu ---- */
   const burger = document.getElementById('navBurger');
   if (burger) {
-    burger.addEventListener('click', () => nav.classList.toggle('is-open'));
+    const syncExpanded = () =>
+      burger.setAttribute('aria-expanded', nav.classList.contains('is-open') ? 'true' : 'false');
+    burger.addEventListener('click', () => { nav.classList.toggle('is-open'); syncExpanded(); });
     document.querySelectorAll('#navLinks a').forEach(a =>
-      a.addEventListener('click', () => nav.classList.remove('is-open')));
+      a.addEventListener('click', () => { nav.classList.remove('is-open'); syncExpanded(); }));
   }
 
   /* ---- Scroll reveal (staggered) ---- */

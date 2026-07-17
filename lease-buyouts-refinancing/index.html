@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="../caf-v7-assets/caf-white.css?v=15" />
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
   <div class="aurora" aria-hidden="true">
     <span class="aurora__blob aurora__blob--1"></span>
     <span class="aurora__blob aurora__blob--2"></span>
@@ -42,11 +43,11 @@
         </div>
         <a href="../contact-us/" class="btn btn--primary nav__cta">Get Approved</a>
       </div>
-      <button class="nav__burger" id="navBurger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      <button class="nav__burger" id="navBurger" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
     </div>
   </header>
 
-  <main>
+  <main id="main">
     <!-- SUB HERO -->
     <section class="subhero subhero--split">
       <div class="subhero__inner reveal" data-reveal>
@@ -149,9 +150,12 @@
         <p>Send us a few details and we’ll coordinate a clear, transparent lease buyout — from application to funding.</p>
         <form class="cta__form" id="leadForm" novalidate>
           <input type="text" name="company_website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" />
-          <input type="text" name="name" placeholder="Full name" required aria-label="Full name" />
-          <input type="email" name="email" placeholder="Email address" required aria-label="Email address" />
-          <input type="tel" name="phone" placeholder="Phone" aria-label="Phone" />
+          <label class="sr-only" for="lead-name">Full name</label>
+          <input type="text" name="name" id="lead-name" placeholder="Full name" required aria-label="Full name" />
+          <label class="sr-only" for="lead-email">Email address</label>
+          <input type="email" name="email" id="lead-email" placeholder="Email address" required aria-label="Email address" />
+          <label class="sr-only" for="lead-phone">Phone</label>
+          <input type="tel" name="phone" id="lead-phone" placeholder="Phone" aria-label="Phone" />
           <button type="submit" class="btn btn--primary btn--lg">Get Approved <span class="btn__arrow">→</span></button>
         </form>
         <p class="cta__note" id="formNote" aria-live="polite"></p>
@@ -178,6 +182,7 @@
           <a href="../contact-us/">Contact</a>
           <a href="../privacy-policy/">Privacy Policy</a>
           <a href="../terms-of-service/">Terms of Service</a>
+          <a href="../accessibility/">Accessibility</a>
         </div>
       </div>
     </div>
