@@ -162,12 +162,12 @@
 
 /* ---------- Header contact block ---------- */
 .nav__actions { display: flex; align-items: center; gap: 1.2rem; }
-.nav__contact { display: flex; flex-direction: column; align-items: flex-end; line-height: 1.25; text-align: right; }
+.nav__contact { display: flex; flex-direction: row; align-items: center; gap: 0.9rem; line-height: 1; text-align: right; white-space: nowrap; }
 .nav__phone { font-family: var(--font-display); font-weight: 700; font-size: 0.98rem; color: var(--ink); transition: color 0.3s; }
 .nav__phone:hover { color: var(--blue-soft); }
 .nav__email { font-size: 0.8rem; color: var(--ink-dim); transition: color 0.3s; }
 .nav__email:hover { color: var(--blue-soft); }
-@media (max-width: 1180px) { .nav__email { display: none; } }
+@media (max-width: 1320px) { .nav__email { display: none; } }
 @media (max-width: 1040px) { .nav__contact { display: none; } }
 
 /* ---------- Section soft band ---------- */
