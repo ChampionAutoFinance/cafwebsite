@@ -66,3 +66,7 @@ User-agent: Amazonbot
 Disallow: /
 
 Sitemap: https://championautofinance.com/sitemap.xml
+Sitemap: https://championautofinance.com/sitemap-videos.xml
+
+# LLM-readable site summary
+# https://championautofinance.com/llms.txt
