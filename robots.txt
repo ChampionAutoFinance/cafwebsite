@@ -3,7 +3,25 @@ User-agent: *
 Disallow: /wp-admin/
 Allow: /wp-admin/admin-ajax.php
 
-# SEO / analytics / AI scrapers: not welcome.
+# AI answer / citation engines: welcome (so we appear in AI search results).
+# These retrieve pages to answer live user questions and cite the source —
+# distinct from the bulk-training crawlers blocked below.
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# SEO / analytics / bulk-training AI scrapers: not welcome.
 # (Well-behaved bots obey this; the rest are hard-blocked in .htaccess.)
 User-agent: AhrefsBot
 Disallow: /
@@ -41,17 +59,10 @@ Disallow: /
 User-agent: anthropic-ai
 Disallow: /
 
-User-agent: PerplexityBot
-Disallow: /
-
 User-agent: Bytespider
 Disallow: /
 
 User-agent: Amazonbot
 Disallow: /
 
-User-agent: Google-Extended
-Disallow: /
-
-Sitemap: https://championautofinance.com/wp-sitemap.xml
 Sitemap: https://championautofinance.com/sitemap.xml

@@ -103,7 +103,7 @@
   /* ---- Parallax shield on mouse + cursor glow ---- */
   const glow = document.getElementById('cursorGlow');
   const shieldWrap = document.querySelector('.hero__shield-wrap');
-  if (!reduceMotion) {
+  if (!reduceMotion && window.matchMedia('(pointer: fine)').matches) {
     window.addEventListener('mousemove', (e) => {
       if (glow) { glow.style.left = e.clientX + 'px'; glow.style.top = e.clientY + 'px'; }
       if (shieldWrap && window.scrollY < window.innerHeight) {
@@ -151,12 +151,14 @@
       try {
         const fd = new FormData(form);
         fd.append('_page', location.pathname);
+        if (document.referrer) fd.append('_referrer', document.referrer);
         const res = await fetch('/caf-v7-assets/lead.php', { method: 'POST', body: fd });
         const out = await res.json().catch(() => ({ ok: false }));
         if (res.ok && out.ok) {
           note.style.color = '';
           note.textContent = `Thanks, ${data.name.split(' ')[0]} \u2014 we\u2019ll be in touch shortly.`;
           form.reset();
+          if (typeof gtag === 'function') { gtag('event', 'generate_lead', { form: 'lead', page: location.pathname }); }
         } else {
           note.style.color = '#c0392b';
           note.textContent = out.error || 'Something went wrong. Please call (732) 618-2036.';

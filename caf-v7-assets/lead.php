@@ -29,8 +29,8 @@ if (!filter_var($safeEmail, FILTER_VALIDATE_EMAIL)) {
 
 $to = 'info@championautofinance.com';
 $subject = 'Website lead — ' . $safeName;
-$labels = ['name'=>'Name','email'=>'Email','phone'=>'Phone','topic'=>'Topic','message'=>'Message','_page'=>'Submitted from'];
-$order = ['name','email','phone','topic','message','_page'];
+$labels = ['name'=>'Name','email'=>'Email','phone'=>'Phone','topic'=>'Topic','message'=>'Message','_page'=>'Submitted from','_referrer'=>'Came from'];
+$order = ['name','email','phone','topic','message','_page','_referrer'];
 $lines = [];
 foreach ($order as $k) { if (!empty($data[$k])) $lines[] = $labels[$k].': '.$data[$k]; }
 foreach ($data as $k=>$v) { if ($k==='company_website'||in_array($k,$order,true)||$v==='') continue; $lines[] = ucfirst($k).': '.$v; }

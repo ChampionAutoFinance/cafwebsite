@@ -381,6 +381,15 @@ img { max-width: 100%; display: block; }
 }
 .footer__social a:hover { color: var(--blue); border-color: rgba(43,137,255,0.45); background: rgba(43,137,255,0.08); transform: translateY(-2px); }
 .footer__social img { width: 1rem; height: 1rem; object-fit: contain; }
+
+/* ---------- Trust badges (Trustpilot / BBB) ---------- */
+.trust-badges { display: flex; align-items: center; gap: 1.15rem; flex-wrap: wrap; margin-top: 1.15rem; }
+.trust-badges a { display: inline-flex; align-items: center; transition: opacity 0.25s, transform 0.25s; }
+.trust-badges a:hover { opacity: 0.72; transform: translateY(-2px); }
+.trust-badges img { display: block; width: auto; object-fit: contain; }
+.trust-badges .tb-tp img { height: 1.5rem; }
+.trust-badges .tb-bbb img { height: 2rem; }
+
 .footer__cols { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
 .footer__cols h3 { font-size: 0.82rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 1rem; }
 .footer__cols a { display: block; color: var(--ink-dim); padding: 0.3rem 0; transition: color 0.3s, transform 0.3s; }

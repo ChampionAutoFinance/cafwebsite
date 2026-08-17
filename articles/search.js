@@ -14,7 +14,7 @@ function run(){
     return terms.every(function(t){return h.indexOf(t)>-1;});
   });
   out.innerHTML=hits.slice(0,MAX).map(function(a){
-    return '<li><a href="'+a.u+'">'+esc(a.t)+'</a> <span class="caf-count">&mdash; '+esc(a.c)+'</span></li>';
+    return '<li><a href="https://championautofinance.com'+a.u+'">'+esc(a.t)+'</a> <span class="caf-count">&mdash; '+esc(a.c)+'</span></li>';
   }).join('');
   cnt.textContent=hits.length?hits.length+' result'+(hits.length===1?'':'s')+(hits.length>MAX?' (showing first '+MAX+')':''):'No matching articles';
   out.hidden=!hits.length;cnt.hidden=false;

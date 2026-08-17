@@ -4,12 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Blog &amp; Article Library | Champion Auto Finance</title>
-  <meta name="description" content="The Champion Auto Finance article library: lease buyouts, auto refinancing, car payment help, and dealer financing." />
+  <meta name="description" content="The Champion Auto Finance article library: lease buyout guides, local pages, and explainer videos." />
   <link rel="icon" type="image/png" href="../caf-v7-assets/assets/favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../caf-v7-assets/styles.css?v=3" />
+  <link rel="stylesheet" href="../caf-v7-assets/styles.css?v=5" />
   <link rel="stylesheet" href="../caf-v7-assets/pages.css?v=3" />
   <link rel="stylesheet" href="../caf-v7-assets/caf-white.css?v=15" />
   <link rel="canonical" href="https://championautofinance.com/articles/" />
@@ -32,8 +32,8 @@
       </a>
       <nav class="nav__links" id="navLinks">
         <a href="../how-it-works/">How It Works</a>
-        <a href="../dealer-partners/">Dealers</a>
-        <a href="../lease-buyouts-refinancing/">Lease Buyouts</a>
+        <a href="../lease-buyouts/">Lease Buyouts</a>
+        <a href="../wholesale-network/">Wholesale Network</a>
         <a href="../faqs/">FAQs</a>
         <a href="/articles/" class="is-active">Blog</a>
         <a href="../contact-us/">Contact</a>
@@ -56,16 +56,15 @@
         <div class="crumb"><a href="../">Home</a><span>/</span> Blog</div>
         <span class="eyebrow">Blog</span>
         <h1 class="subhero__title">The Champion <span class="accent">blog</span></h1>
-        <p class="subhero__lead">Guides and local pages on lease buyouts, refinancing, car payments, and dealer financing — 1437 articles and growing.</p>
+        <p class="subhero__lead">Guides and local pages on lease buyouts — 858 articles and growing.</p>
       </div>
     </section>
 
     <section class="section caf-art" style="padding-top:1rem;">
       <div class="reveal" data-reveal>
 <style>
-.caf-cols{columns:3;column-gap:2.5rem;list-style:none;padding-left:0;margin:0 0 2em}
+.caf-cols{columns:2;column-gap:2rem;list-style:none;padding-left:0;margin:0 0 2em}
 .caf-cols li{break-inside:avoid;margin:0 0 .55em}
-@media(max-width:991px){.caf-cols{columns:2}}
 @media(max-width:600px){.caf-cols{columns:1}}
 .caf-cat-list{list-style:none;padding-left:0}
 .caf-cat-list li{margin:0 0 1.2em}
@@ -74,9 +73,40 @@
 .caf-search input{width:100%;max-width:480px;padding:12px 16px;border:1px solid rgba(0,0,0,.2);border-radius:10px;font-family:inherit;font-size:1em;background:transparent;color:inherit}
 #caf-search-count{margin:.75em 0;opacity:.7}
 .caf-art h2{margin:1.6em 0 .7em}
+
+/* ---- split layout: articles on the left, video library on the right ---- */
+.caf-split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:2.75rem;align-items:start}
+.caf-split__main{min-width:0}
+.caf-split__main > h2:first-of-type{margin-top:0}
+.caf-video-rail{position:sticky;top:88px;min-width:0}
+.caf-video-rail__inner{border-left:1px solid var(--line);padding-left:2.5rem}
+.caf-art .caf-video-rail__inner h2{margin:0 0 .35em}
+.caf-video-rail__head p{margin:0 0 1.4em;font-size:.95rem;color:var(--ink-dim)}
+.caf-video-rail__scroll{max-height:calc(100vh - 230px);overflow-y:auto;overscroll-behavior:contain;padding-right:.85rem}
+.caf-video-grp{font-family:var(--font-display);font-size:.74rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-dim);margin:1.7em 0 .8em}
+.caf-video-grp:first-child{margin-top:0}
+.caf-video-list{list-style:none;padding:0;margin:0}
+.caf-video-list li{margin:0 0 .4rem}
+.caf-video-list a{display:grid;grid-template-columns:104px minmax(0,1fr);gap:.85rem;align-items:center;padding:.45rem;border:1px solid transparent;border-radius:12px;text-decoration:none;color:var(--ink)}
+.caf-video-list a:hover,.caf-video-list a:focus-visible{background:var(--glass-2);border-color:var(--line)}
+.caf-video-thumb{position:relative;display:block;line-height:0;border-radius:9px;overflow:hidden;background:var(--navy-800)}
+.caf-video-thumb img{width:100%;height:auto;display:block}
+.caf-video-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:26px;height:26px;border-radius:50%;background:rgba(0,0,0,.55)}
+.caf-video-play::after{content:"";position:absolute;top:50%;left:56%;transform:translate(-50%,-50%);border-left:8px solid #fff;border-top:5px solid transparent;border-bottom:5px solid transparent}
+.caf-video-dur{position:absolute;right:4px;bottom:4px;padding:1px 5px;border-radius:4px;background:rgba(0,0,0,.72);color:#fff;font-size:.68rem;line-height:1.5;font-variant-numeric:tabular-nums}
+.caf-video-title{font-size:.93rem;font-weight:600;line-height:1.35}
+.caf-video-rail__more{margin:1.2rem 0 0;font-size:.95rem;font-weight:600}
+@media(max-width:991px){
+  .caf-split{grid-template-columns:1fr;gap:2.25rem}
+  .caf-video-rail{position:static}
+  .caf-video-rail__inner{border-left:0;border-top:1px solid var(--line);padding-left:0;padding-top:2rem}
+  .caf-video-rail__scroll{max-height:70vh}
+}
 </style>
+<div class="caf-split">
+<div class="caf-split__main">
 <div class="caf-search">
-<input type="search" id="caf-search-input" placeholder="Search all 1437 articles&hellip;" aria-label="Search articles" autocomplete="off">
+<input type="search" id="caf-search-input" placeholder="Search all 858 articles&hellip;" aria-label="Search articles" autocomplete="off">
 <p id="caf-search-count" hidden></p>
 <ul id="caf-search-results" class="caf-cols" hidden></ul>
 </div>
@@ -84,29 +114,73 @@
 <script src="search.js" defer></script>
 <h2>From the blog</h2>
 <ul>
-<li><a href="/articles/how-your-credit-score-affects-auto-financing/">How Your Credit Score Affects Auto Financing</a></li>
-<li><a href="/articles/lease-buyout-when-to-keep-your-vehicle/">Lease Buyout: When to Keep Your Vehicle</a></li>
-<li><a href="/articles/refinancing-an-auto-loan-in-new-jersey/">Refinancing an Auto Loan in New Jersey</a></li>
+<li><a href="https://championautofinance.com/articles/lease-buyout-when-to-keep-your-vehicle/">Lease Buyout: When to Keep Your Vehicle</a></li>
 </ul>
-<h2>Browse all 1437 articles</h2>
+<h2>Browse all 858 articles</h2>
 <ul class="caf-cat-list">
-<li><h2 style="margin:0 0 .2em"><a href="lease-buyout-brands.html">Lease Buyouts by Brand &amp; Model</a> <span class="caf-count">(154)</span></h2><p style="margin:0">Brand- and model-specific lease buyout financing guides — Acura through Volvo.</p></li>
-<li><h2 style="margin:0 0 .2em"><a href="lease-buyout-lenders.html">Lease Buyouts by Bank &amp; Captive Lender</a> <span class="caf-count">(34)</span></h2><p style="margin:0">How each captive finance arm and bank handles payoffs, third-party buyouts, and titles.</p></li>
-<li><h2 style="margin:0 0 .2em"><a href="lease-buyout-guides.html">Lease Buyout Guides &amp; FAQs</a> <span class="caf-count">(125)</span></h2><p style="margin:0">Payoff quotes, taxes and fees, credit, timing, paperwork, and common mistakes.</p></li>
-<li><h2 style="margin:0 0 .2em"><a href="lease-buyouts-by-city.html">Lease Buyouts by City</a> <span class="caf-count">(550)</span></h2><p style="margin:0">Local lease buyout financing pages across New Jersey, New York, and Pennsylvania.</p></li>
-<li><h2 style="margin:0 0 .2em"><a href="auto-refinance-by-city.html">Auto Refinancing by City</a> <span class="caf-count">(53)</span></h2><p style="margin:0">Local auto loan refinancing pages across NJ, NY, and PA.</p></li>
-<li><h2 style="margin:0 0 .2em"><a href="car-payment-help-by-city.html">Car Payment Help by City</a> <span class="caf-count">(53)</span></h2><p style="margin:0">Local guides to lowering a car payment through refinancing or restructuring.</p></li>
-<li><h2 style="margin:0 0 .2em"><a href="local-guides.html">More Local Guides</a> <span class="caf-count">(136)</span></h2><p style="margin:0">City pages for lease exits, upside-down car loans, and used car financing.</p></li>
-<li><h2 style="margin:0 0 .2em"><a href="dealer-financing.html">Dealer Financing Programs &amp; Education</a> <span class="caf-count">(173)</span></h2><p style="margin:0">Programs and education for used-vehicle dealer partners, including local pages.</p></li>
-<li><h2 style="margin:0 0 .2em"><a href="auto-finance-guides.html">Auto Finance &amp; Refinancing Guides</a> <span class="caf-count">(159)</span></h2><p style="margin:0">Refinancing, negative equity, calculators, credit, and loan-basics articles.</p></li>
+<li><h2 style="margin:0 0 .2em"><a href="https://championautofinance.com/articles/lease-buyout-brands.html">Lease Buyouts by Brand &amp; Model</a> <span class="caf-count">(152)</span></h2><p style="margin:0">Brand- and model-specific lease buyout financing guides — Acura through Volvo.</p></li>
+<li><h2 style="margin:0 0 .2em"><a href="https://championautofinance.com/articles/lease-buyout-lenders.html">Lease Buyouts by Bank &amp; Captive Lender</a> <span class="caf-count">(34)</span></h2><p style="margin:0">How each captive finance arm and bank handles payoffs, third-party buyouts, and titles.</p></li>
+<li><h2 style="margin:0 0 .2em"><a href="https://championautofinance.com/articles/lease-buyout-guides.html">Lease Buyout Guides &amp; FAQs</a> <span class="caf-count">(122)</span></h2><p style="margin:0">Payoff quotes, taxes and fees, credit, timing, paperwork, and common mistakes.</p></li>
+<li><h2 style="margin:0 0 .2em"><a href="https://championautofinance.com/articles/lease-buyouts-by-city.html">Lease Buyouts by City</a> <span class="caf-count">(550)</span></h2><p style="margin:0">Local lease buyout financing pages across New Jersey, New York, and Pennsylvania.</p></li>
 </ul>
 <h2>Start here</h2>
 <ul>
-<li><a href="/lease-buyout-financing/">Lease Buyout Financing</a> — the pillar guide to keeping the car you already lease.</li>
-<li><a href="/auto-refinance/">Auto Refinance</a> — how refinancing works and when it makes sense.</li>
-<li><a href="/car-payment-help/">Car Payment Help</a> — options when a payment is too high.</li>
-<li><a href="/dealer-partners/">Dealer Partners</a> — financing programs for used-vehicle dealers.</li>
+<li><a href="https://championautofinance.com/lease-buyout-financing/">Lease Buyout Financing</a> — the pillar guide to keeping the car you already lease.</li>
+<li><a href="/wholesale-network/">Wholesale Network</a> — our dealer wholesale network for buying and selling inventory.</li>
 </ul>
+</div><!-- /.caf-split__main -->
+<aside class="caf-video-rail" aria-labelledby="caf-video-rail-h">
+  <div class="caf-video-rail__inner">
+    <div class="caf-video-rail__head">
+      <h2 id="caf-video-rail-h">Watch the explainers</h2>
+      <p>37 articles come with a short video. Every one of them is also filed in its regular category on the left.</p>
+    </div>
+    <div class="caf-video-rail__scroll">
+      <h3 class="caf-video-grp">Lease buyouts <span class="caf-count">(37)</span></h3>
+      <ul class="caf-video-list">
+        <li><a href="https://championautofinance.com/best-time-to-buy-out-a-lease/" title="Video: The Best Time to Buy Out Your Lease"><span class="caf-video-thumb"><img src="https://championautofinance.com/caf-v7-assets/videos/best-time-to-buy-out-a-lease-poster.jpg" alt="" width="320" height="180" loading="lazy" decoding="async"><span class="caf-video-play" aria-hidden="true"></span><span class="caf-video-dur">0:33</span></span><span class="caf-video-title">Best Time to Buy Out a Lease</span></a></li>
+        <li><a href="https://championautofinance.com/buying-out-a-lease-after-accident/" title="Video: Buying Out a Lease After an Accident"><span class="caf-video-thumb"><img src="https://championautofinance.com/caf-v7-assets/videos/buying-out-a-lease-after-accident-poster.jpg" alt="" width="320" height="180" loading="lazy" decoding="async"><span class="caf-video-play" aria-hidden="true"></span><span class="caf-video-dur">0:33</span></span><span class="caf-video-title">Buying Out a Lease After an Accident</span></a></li>
+        <li><a href="https://championautofinance.com/can-i-buy-out-my-lease-and-sell-it/" title="Video: Can I Buy Out My Lease and Sell It?"><span class="caf-video-thumb"><img src="https://championautofinance.com/caf-v7-assets/videos/can-i-buy-out-my-lease-and-sell-it-poster.jpg" alt="" width="320" height="180" loading="lazy" decoding="async"><span class="caf-video-play" aria-hidden="true"></span><span class="caf-video-dur">0:37</span></span><span class="caf-video-title">Can I Buy Out My Lease and Sell It?</span></a></li>
+        <li><a href="https://championautofinance.com/can-i-end-my-car-lease-early/" title="Video: Can I End My Car Lease Early?"><span class="caf-video-thumb"><img src="https://championautofinance.com/caf-v7-assets/videos/can-i-end-my-car-lease-early-poster.jpg" alt="" width="320" height="180" loading="lazy" decoding="async"><span class="caf-video-play" aria-hidden="true"></span><span class="caf-video-dur">0:34</span></span><span class="caf-video-title">Can I end my car lease early?</span></a></li>
+        <li><a href="https://championautofinance.com/can-i-finance-my-lease-buyout/" title="Video: Lease Buyout Financing: How It Works in 30 Seconds"><span class="caf-video-thumb"><img src="https://championautofinance.com/caf-v7-assets/videos/lease-buyout-financing-poster.jpg" alt="" width="320" height="180" loading="lazy" decoding="async"><span class="caf-video-play" aria-hidden="true"></span><span class="caf-video-dur">0:35</span></span><span class="caf-video-title">Can I Finance My Lease Buyout?</span></a></li>
+        <li><a href="https://championautofinance.com/can-i-negotiate-my-lease-buyout-price/" title="Video: Can You Negotiate a Lease Buyout Price?"><span class="caf-video-thumb"><img src="https://championautofinance.com/caf-v7-assets/videos/can-i-negotiate-my-lease-buyout-price-poster.jpg" alt="" width="320" height="180" loading="lazy" decoding="async"><span class="caf-video-play" aria-hidden="true"></span><span class="caf-video-dur">0:33</span></span><span class="caf-video-title">Can I Negotiate My Lease Buyout Price?</span></a></li>
+        <li><a href="https://championautofinance.com/can-i-sell-my-leased-car/" title="Video: Can You Sell Your Leased Car?"><span class="caf-video-thumb"><img src="https://championautofinance.com/caf-v7-assets/videos/can-i-sell-my-leased-car-poster.jpg" alt="" width="320" height="180" loading="lazy" decoding="async"><span class="caf-video-play" aria-hidden="true"></span><span class="caf-video-dur">0:33</span></span><span class="caf-video-title">Can I sell my leased car?</span></a></li>
+        <li><a href="https://championautofinance.com/can-i-transfer-my-car-lease-to-someone-else/" title="Video: Can I Transfer My Car Lease to Someone Else?"><span class="caf-video-thumb"><img src="https://championautofinance.com/caf-v7-assets/videos/can-i-transfer-my-car-lease-to-someone-else-poster.jpg" alt="" width="320" height="180" loading="lazy" decoding="async"><span class="caf-video-play" aria-hidden="true"></span><span class="caf-video-dur">0:35</span></span><span class="caf-video-title">Can I transfer my car lease to someone else?</span></a></li>
+        <li><a href="https://championautofinance.com/lease-buyout-cosigner/" title="Video: Lease Buyout With a Cosigner: How It Works"><span class="caf-video-thumb"><img src="https://championautofinance.com/caf-v7-assets/videos/lease-buyout-cosigner-poster.jpg" alt="" width="320" height="180" loading="lazy" decoding="async"><span class="caf-video-play" aria-hidden="true"></span><span class="caf-video-dur">0:32</span></span><span class="caf-video-title">Co-Signer for a Lease Buyout Loan: How It Works</span></a></li>
+        <li><a href="https://championautofinance.com/lease-buyout-common-mistakes/" title="Video: Common Lease Buyout Mistakes to Avoid"><span class="caf-video-thumb"><img src="https://championautofinance.com/caf-v7-assets/videos/lease-buyout-common-mistakes-poster.jpg" alt="" width="320" height="180" loading="lazy" decoding="async"><span class="caf-video-play" aria-hidden="true"></span><span class="caf-video-dur">0:33</span></span><span class="caf-video-title">Common Lease Buyout Mistakes to Avoid</span></a></li>
+        <li><a href="https://championautofinance.com/do-i-need-gap-insurance-on-a-lease-buyout/" title="Video: Gap Insurance After a Lease Buyout: Do You Need It?"><span class="caf-video-thumb"><img src="https://championautofinance.com/caf-v7-assets/videos/do-i-need-gap-insurance-on-a-lease-buyout-poster.jpg" alt="" width="320" height="180" loading="lazy" decoding="async"><span class="caf-video-play" aria-hidden="true"></span><span class="caf-video-dur">0:34</span></span><span class="caf-video-title">Do I Need Gap Insurance on a Lease Buyout?</span></a></li>
+        <li><a href="https://championautofinance.com/early-lease-buyout/" title="Video: Early Lease Buyout: How It Works"><span class="caf-video-thumb"><img src="https://championautofinance.com/caf-v7-assets/videos/early-lease-buyout-poster.jpg" alt="" width="320" height="180" loading="lazy" decoding="async"><span class="caf-video-play" aria-hidden="true"></span><span class="caf-video-dur">0:33</span></span><span class="caf-video-title">Early Lease Buyout: Buying Out Before Lease End</span></a></li>
+        <li><a href="https://championautofinance.com/finance-taxes-and-fees-lease-buyout/" title="Video: Rolling Taxes &amp; Fees Into a Lease Buyout"><span class="caf-video-thumb"><img src="https://championautofinance.com/caf-v7-assets/videos/finance-taxes-and-fees-lease-buyout-poster.jpg" alt="" width="320" height="180" loading="lazy" decoding="async"><span class="caf-video-play" aria-hidden="true"></span><span class="caf-video-dur">0:38</span></span><span class="caf-video-title">Financing Taxes &amp; Fees Into a Lease Buyout</span></a></li>
+        <li><a href="https://championautofinance.com/how-does-a-lease-buyout-affect-insurance/" title="Video: How Does a Lease Buyout Affect Insurance?"><span class="caf-video-thumb"><img src="https://championautofinance.com/caf-v7-assets/videos/how-does-a-lease-buyout-affect-insurance-poster.jpg" alt="" width="320" height="180" loading="lazy" decoding="async"><span class="caf-video-play" aria-hidden="true"></span><span class="caf-video-dur">0:36</span></span><span class="caf-video-title">How a Lease Buyout Affects Insurance</span></a></li>
+        <li><a href="https://championautofinance.com/how-does-lease-buyout-financing-work/" title="Video: Lease Buyout Financing: How It Works in 30 Seconds"><span class="caf-video-thumb"><img src="https://championautofinance.com/caf-v7-assets/videos/lease-buyout-financing-poster.jpg" alt="" width="320" height="180" loading="lazy" decoding="async"><span class="caf-video-play" aria-hidden="true"></span><span class="caf-video-dur">0:35</span></span><span class="caf-video-title">How Does Lease Buyout Financing Work?</span></a></li>
+        <li><a href="https://championautofinance.com/how-long-does-a-lease-buyout-take/" title="Video: How Long Does a Lease Buyout Take?"><span class="caf-video-thumb"><img src="https://championautofinance.com/caf-v7-assets/videos/how-long-does-a-lease-buyout-take-poster.jpg" alt="" width="320" height="180" loading="lazy" decoding="async"><span class="caf-video-play" aria-hidden="true"></span><span class="caf-video-dur">0:33</span></span><span class="caf-video-title">How Long Does a Lease Buyout Take?</span></a></li>
+        <li><a href="https://championautofinance.com/how-to-get-a-lease-payoff-quote/" title="Video: How to Get Your Lease Payoff Quote"><span class="caf-video-thumb"><img src="https://championautofinance.com/caf-v7-assets/videos/how-to-get-a-lease-payoff-quote-poster.jpg" alt="" width="320" height="180" loading="lazy" decoding="async"><span class="caf-video-play" aria-hidden="true"></span><span class="caf-video-dur">0:44</span></span><span class="caf-video-title">How to Get a Lease Payoff Quote</span></a></li>
+        <li><a href="https://championautofinance.com/get-out-of-a-car-lease/" title="Video: How to Get Out of a Car Lease: Every Option"><span class="caf-video-thumb"><img src="https://championautofinance.com/caf-v7-assets/videos/how-to-get-out-of-a-car-lease-poster.jpg" alt="" width="320" height="180" loading="lazy" decoding="async"><span class="caf-video-play" aria-hidden="true"></span><span class="caf-video-dur">0:37</span></span><span class="caf-video-title">How to Get Out of a Car Lease</span></a></li>
+        <li><a href="https://championautofinance.com/lease-buyout-checklist/" title="Video: Your Lease Buyout Checklist"><span class="caf-video-thumb"><img src="https://championautofinance.com/caf-v7-assets/videos/lease-buyout-checklist-poster.jpg" alt="" width="320" height="180" loading="lazy" decoding="async"><span class="caf-video-play" aria-hidden="true"></span><span class="caf-video-dur">0:36</span></span><span class="caf-video-title">Lease Buyout Checklist: Step-by-Step</span></a></li>
+        <li><a href="https://championautofinance.com/lease-buyout-credit-score/" title="Video: What Credit Score Do You Need for a Lease Buyout?"><span class="caf-video-thumb"><img src="https://championautofinance.com/caf-v7-assets/videos/lease-buyout-credit-score-poster.jpg" alt="" width="320" height="180" loading="lazy" decoding="async"><span class="caf-video-play" aria-hidden="true"></span><span class="caf-video-dur">0:35</span></span><span class="caf-video-title">Lease Buyout Credit Score: What You Need</span></a></li>
+        <li><a href="https://championautofinance.com/lease-buyout-documents-needed/" title="Video: Lease Buyout Documents: Your Checklist"><span class="caf-video-thumb"><img src="https://championautofinance.com/caf-v7-assets/videos/lease-buyout-documents-needed-poster.jpg" alt="" width="320" height="180" loading="lazy" decoding="async"><span class="caf-video-play" aria-hidden="true"></span><span class="caf-video-dur">0:30</span></span><span class="caf-video-title">Lease Buyout Documents Needed</span></a></li>
+        <li><a href="https://championautofinance.com/lease-buyout-financing/" title="Video: Lease Buyout Financing: How It Works in 30 Seconds"><span class="caf-video-thumb"><img src="https://championautofinance.com/caf-v7-assets/videos/lease-buyout-financing-poster.jpg" alt="" width="320" height="180" loading="lazy" decoding="async"><span class="caf-video-play" aria-hidden="true"></span><span class="caf-video-dur">0:35</span></span><span class="caf-video-title">Lease Buyout Financing</span></a></li>
+        <li><a href="https://championautofinance.com/lease-buyout-financing-new-jersey/" title="Video: Lease Buyout Financing in New Jersey"><span class="caf-video-thumb"><img src="https://championautofinance.com/caf-v7-assets/videos/lease-buyout-financing-new-jersey-poster.jpg" alt="" width="320" height="180" loading="lazy" decoding="async"><span class="caf-video-play" aria-hidden="true"></span><span class="caf-video-dur">0:37</span></span><span class="caf-video-title">Lease Buyout Financing in New Jersey</span></a></li>
+        <li><a href="https://championautofinance.com/lease-buyout-interest-rates-explained/" title="Video: Lease Buyout Interest Rates Explained"><span class="caf-video-thumb"><img src="https://championautofinance.com/caf-v7-assets/videos/lease-buyout-interest-rates-explained-poster.jpg" alt="" width="320" height="180" loading="lazy" decoding="async"><span class="caf-video-play" aria-hidden="true"></span><span class="caf-video-dur">0:35</span></span><span class="caf-video-title">Lease Buyout Interest Rates Explained</span></a></li>
+        <li><a href="https://championautofinance.com/lease-buyout-over-mileage/" title="Video: Lease Buyout Over the Mileage Limit"><span class="caf-video-thumb"><img src="https://championautofinance.com/caf-v7-assets/videos/lease-buyout-over-mileage-poster.jpg" alt="" width="320" height="180" loading="lazy" decoding="async"><span class="caf-video-play" aria-hidden="true"></span><span class="caf-video-dur">0:35</span></span><span class="caf-video-title">Lease Buyout Over Mileage Limit</span></a></li>
+        <li><a href="https://championautofinance.com/lease-buyout-pros-and-cons/" title="Video: Lease Buyout Pros and Cons"><span class="caf-video-thumb"><img src="https://championautofinance.com/caf-v7-assets/videos/lease-buyout-pros-and-cons-poster.jpg" alt="" width="320" height="180" loading="lazy" decoding="async"><span class="caf-video-play" aria-hidden="true"></span><span class="caf-video-dur">0:33</span></span><span class="caf-video-title">Lease Buyout Pros and Cons</span></a></li>
+        <li><a href="https://championautofinance.com/lease-buyout-vs-lease-extension/" title="Video: Lease Buyout vs. Lease Extension: Which Fits?"><span class="caf-video-thumb"><img src="https://championautofinance.com/caf-v7-assets/videos/lease-buyout-vs-lease-extension-poster.jpg" alt="" width="320" height="180" loading="lazy" decoding="async"><span class="caf-video-play" aria-hidden="true"></span><span class="caf-video-dur">0:41</span></span><span class="caf-video-title">Lease Buyout vs Lease Extension</span></a></li>
+        <li><a href="https://championautofinance.com/lease-buyout-vs-trade-in/" title="Video: Lease Buyout vs. Trade-In: Which Is Smarter?"><span class="caf-video-thumb"><img src="https://championautofinance.com/caf-v7-assets/videos/lease-buyout-vs-trade-in-poster.jpg" alt="" width="320" height="180" loading="lazy" decoding="async"><span class="caf-video-play" aria-hidden="true"></span><span class="caf-video-dur">0:32</span></span><span class="caf-video-title">Lease Buyout vs Trade-In</span></a></li>
+        <li><a href="https://championautofinance.com/lease-buyout-vs-used-car-loan/" title="Video: Lease Buyout vs Used-Car Loan: Which Is Smarter?"><span class="caf-video-thumb"><img src="https://championautofinance.com/caf-v7-assets/videos/lease-buyout-vs-used-car-loan-poster.jpg" alt="" width="320" height="180" loading="lazy" decoding="async"><span class="caf-video-play" aria-hidden="true"></span><span class="caf-video-dur">0:37</span></span><span class="caf-video-title">Lease Buyout vs Used Car Loan</span></a></li>
+        <li><a href="https://championautofinance.com/lease-end-options-explained/" title="Video: Every Lease-End Option, Explained"><span class="caf-video-thumb"><img src="https://championautofinance.com/caf-v7-assets/videos/lease-end-options-explained-poster.jpg" alt="" width="320" height="180" loading="lazy" decoding="async"><span class="caf-video-play" aria-hidden="true"></span><span class="caf-video-dur">0:43</span></span><span class="caf-video-title">Lease-End Options Explained</span></a></li>
+        <li><a href="https://championautofinance.com/lease-buyout-market-value-vs-residual/" title="Video: Market Value vs. Residual: The Comparison That Decides It"><span class="caf-video-thumb"><img src="https://championautofinance.com/caf-v7-assets/videos/lease-buyout-market-value-vs-residual-poster.jpg" alt="" width="320" height="180" loading="lazy" decoding="async"><span class="caf-video-play" aria-hidden="true"></span><span class="caf-video-dur">0:31</span></span><span class="caf-video-title">Market Value vs Residual Value on a Lease Buyout</span></a></li>
+        <li><a href="https://championautofinance.com/residual-value-explained/" title="Video: What Is Residual Value? A 60-Second Explainer"><span class="caf-video-thumb"><img src="https://championautofinance.com/caf-v7-assets/videos/what-is-residual-value-poster.jpg" alt="" width="320" height="180" loading="lazy" decoding="async"><span class="caf-video-play" aria-hidden="true"></span><span class="caf-video-dur">0:30</span></span><span class="caf-video-title">Residual Value Explained</span></a></li>
+        <li><a href="https://championautofinance.com/trade-in-a-leased-car/" title="Video: Lease Buyout vs. Trade-In: Which Is Smarter?"><span class="caf-video-thumb"><img src="https://championautofinance.com/caf-v7-assets/videos/lease-buyout-vs-trade-in-poster.jpg" alt="" width="320" height="180" loading="lazy" decoding="async"><span class="caf-video-play" aria-hidden="true"></span><span class="caf-video-dur">0:32</span></span><span class="caf-video-title">Trade In a Leased Car</span></a></li>
+        <li><a href="https://championautofinance.com/extended-warranty-after-lease-buyout/" title="Video: Extended Warranty After a Lease Buyout: How to Decide"><span class="caf-video-thumb"><img src="https://championautofinance.com/caf-v7-assets/videos/extended-warranty-after-lease-buyout-poster.jpg" alt="" width="320" height="180" loading="lazy" decoding="async"><span class="caf-video-play" aria-hidden="true"></span><span class="caf-video-dur">0:34</span></span><span class="caf-video-title">Warranty After a Lease Buyout: Coverage &amp; Options</span></a></li>
+        <li><a href="https://championautofinance.com/what-is-lease-equity/" title="Video: What Is Lease Equity?"><span class="caf-video-thumb"><img src="https://championautofinance.com/caf-v7-assets/videos/what-is-lease-equity-poster.jpg" alt="" width="320" height="180" loading="lazy" decoding="async"><span class="caf-video-play" aria-hidden="true"></span><span class="caf-video-dur">0:42</span></span><span class="caf-video-title">What Is Lease Equity?</span></a></li>
+        <li><a href="https://championautofinance.com/what-is-residual-value/" title="Video: What Is Residual Value? A 60-Second Explainer"><span class="caf-video-thumb"><img src="https://championautofinance.com/caf-v7-assets/videos/what-is-residual-value-poster.jpg" alt="" width="320" height="180" loading="lazy" decoding="async"><span class="caf-video-play" aria-hidden="true"></span><span class="caf-video-dur">0:30</span></span><span class="caf-video-title">What Is Residual Value?</span></a></li>
+        <li><a href="https://championautofinance.com/where-to-get-a-lease-buyout-loan/" title="Video: Lease Buyout Financing: How It Works in 30 Seconds"><span class="caf-video-thumb"><img src="https://championautofinance.com/caf-v7-assets/videos/lease-buyout-financing-poster.jpg" alt="" width="320" height="180" loading="lazy" decoding="async"><span class="caf-video-play" aria-hidden="true"></span><span class="caf-video-dur">0:35</span></span><span class="caf-video-title">Where to Get a Lease Buyout Loan</span></a></li>
+      </ul>
+    </div>
+    <p class="caf-video-rail__more"><a href="https://championautofinance.com/video-guides/">See all video guides &rarr;</a></p>
+  </div>
+</aside>
+</div><!-- /.caf-split -->
       </div>
     </section>
   </main>
@@ -115,20 +189,24 @@
     <div class="footer__inner">
       <div class="footer__brand">
         <img src="../caf-v7-assets/assets/shield.png" alt="Champion Auto Finance" class="footer__logo" />
-        <p>A licensed, transparent financing partner for dealers and buyers who expect more.</p>
+        <p>A licensed, transparent financing partner for buyers who expect more.</p>
         <div class="footer__social">
-          <a href="https://www.facebook.com/profile.php?id=61590770333453" target="_blank" rel="noopener noreferrer" aria-label="Champion Auto Finance on Facebook"><img src="../caf-v7-assets/assets/social-facebook.svg" alt="" /></a>
-          <a href="https://www.instagram.com/championautofinancenj" target="_blank" rel="noopener noreferrer" aria-label="Champion Auto Finance on Instagram"><img src="../caf-v7-assets/assets/social-instagram.svg" alt="" /></a>
-          <a href="https://www.youtube.com/@championautofinance" target="_blank" rel="noopener noreferrer" aria-label="Champion Auto Finance on YouTube"><img src="../caf-v7-assets/assets/social-youtube.svg" alt="" /></a>
-          <a href="https://www.linkedin.com/company/championautofinance" target="_blank" rel="noopener noreferrer" aria-label="Champion Auto Finance on LinkedIn"><img src="../caf-v7-assets/assets/social-linkedin.svg" alt="" /></a>
+          <a href="https://www.instagram.com/championautofinancenj/" target="_blank" rel="noopener noreferrer" aria-label="Champion Auto Finance on Instagram"><img src="../caf-v7-assets/assets/social-instagram.svg?v=2" alt="" /></a>
+          <a href="https://x.com/ChampionFinance" target="_blank" rel="noopener noreferrer" aria-label="Champion Auto Finance on X (Twitter)"><img src="../caf-v7-assets/assets/social-x.svg?v=2" alt="" /></a>
+          <a href="https://www.facebook.com/profile.php?id=61590770333453" target="_blank" rel="noopener noreferrer" aria-label="Champion Auto Finance on Facebook"><img src="../caf-v7-assets/assets/social-facebook.svg?v=2" alt="" /></a>
+          <a href="https://www.youtube.com/@ChampionAutoFinance" target="_blank" rel="noopener noreferrer" aria-label="Champion Auto Finance on YouTube"><img src="../caf-v7-assets/assets/social-youtube.svg?v=2" alt="" /></a>
+        </div>
+        <div class="trust-badges">
+          <a class="tb-tp" href="https://www.trustpilot.com/review/championautofinance.com" target="_blank" rel="noopener noreferrer" aria-label="Champion Auto Finance on Trustpilot"><img src="../caf-v7-assets/assets/trust-trustpilot.svg?v=2" alt="Trustpilot" /></a>
+          <a class="tb-bbb" href="https://www.bbb.org/us/nj/lakewood/profile/auto-financing/champion-auto-finance-llc-0221-90242218" target="_blank" rel="noopener noreferrer" aria-label="Champion Auto Finance BBB profile, A minus rating"><img src="../caf-v7-assets/assets/trust-bbb.png?v=2" alt="Better Business Bureau" /></a>
         </div>
       </div>
       <div class="footer__cols">
         <div>
           <h3>Company</h3>
           <a href="../how-it-works/">How It Works</a>
-          <a href="../dealer-partners/">For Dealers</a>
-          <a href="../lease-buyouts-refinancing/">Lease Buyouts</a>
+          <a href="../wholesale-network/">Wholesale Network</a>
+          <a href="../lease-buyouts/">Lease Buyouts</a>
         </div>
         <div>
           <h3>Resources</h3>
